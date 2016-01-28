@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+
+    <style type="text/css">
+        .header {
+            border: 1px solid red;
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        .header > div {
+            display: table-cell;
+            border: 1px solid blue;
+            position: relative;
+        }
+        .left {
+            width: calc(100% - 130px);
+            max-width: calc(100% - 130px);
+        }
+        .right {
+            width: 130px;
+            text-align: right;
+            position: relative;
+        }
+        .wrap {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            max-width: 100%;
+            display: block;
+        }
+
+        .active .right {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="left ">
+        <div class="wrap">Refine Jewelry and Accessories
+        </div>
+    </div>
+    <div class="right">
+        <button>Refine</button>
+    </div>
+
+</div>
+
+<div class="my-button">
+    <button>Show/Hide</button>
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+
+    var myButton = $('.my-button');
+
+    var header = $('.header');
+
+    myButton.on('click', function() {
+
+        if (header.hasClass('active')) {
+            header.removeClass('active');
+        } else {
+            header.addClass('active');
+        }
+    });
+</script>
+</body>
+</html>
