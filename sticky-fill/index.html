@@ -49,15 +49,15 @@
 <script type="text/javascript" src="../bower_components/Stickyfill/dist/stickyfill.js"></script>
 <script type="text/javascript">
     jQuery(document).on('ready', function() {
-        jQuery('.sticky.bottom').each(function() {
-            var el = $(this);
-            var top = window.outerHeight - el.innerHeight();
-            el.css({
-                'bottom' : '',
-                'top': top
-            });
-        });
-       //jQuery('.sticky').Stickyfill();
+//        jQuery('.sticky.bottom').each(function() {
+//            var el = $(this);
+//            var top = window.outerHeight - el.innerHeight();
+//            el.css({
+//                'bottom' : '',
+//                'top': top
+//            });
+//        });
+        jQuery('.sticky').Stickyfill();
     });
 </script>
 </html>
