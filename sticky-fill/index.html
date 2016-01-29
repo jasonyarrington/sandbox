@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<style type="text/css">
+    .one {
+        border: 1px solid red;
+        position: relative;
+    }
+    .one:before,
+    .one:after {
+        content: '';
+        display: table;
+    }
+    .content {
+        border: 1px solid orange;
+        height: 800px;
+    }
+    .sticky {
+        border: 1px solid blue;
+        position: -webkit-sticky;
+        position: sticky;
+    }
+    .sticky.top {
+        top: 0;
+    }
+    .sticky.bottom {
+        bottom: 0;
+    }
+    .sticky:before,
+    .sticky:after {
+        content: '';
+        display: table;
+    }
+</style>
+<body>
+
+    <div class="one">
+        <div class="sticky top">This is the sticky nav at the top</div>
+        <div class="content">Lorem Ipsum</div>
+        <div class="sticky bottom">This is the sticky nav at the top</div>
+    </div>
+</body>
+
+<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../bower_components/Stickyfill/dist/stickyfill.js"></script>
+<script type="text/javascript">
+    jQuery(document).on('ready', function() {
+        jQuery('.sticky.bottom').each(function() {
+            var el = $(this);
+            var top = window.outerHeight - el.innerHeight();
+            el.css({
+                'bottom' : '',
+                'top': top
+            });
+        });
+       //jQuery('.sticky').Stickyfill();
+    });
+</script>
+</html>
